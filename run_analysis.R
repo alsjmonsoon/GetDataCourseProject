@@ -96,7 +96,7 @@ write.table(tidyDF,file="~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",row.
 # read data back to R
 tidyData<-read.table("~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",head=TRUE)
 
-# 7. read the data back to R (from the submitted Coursera Link)
+# 7. read the data back to R (from the submitted Coursera Link)--load to R studio
 address <- "https://s3.amazonaws.com/coursera-uploads/user-70283134b2b74179e2bf5cc2/975115/asst-3/f1d5405049ae11e5b6c239d2c1272cc9.txt"
 address <- sub("^https", "http", address)
 tidyData <- read.table(url(address), header = TRUE)

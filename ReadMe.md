@@ -1,5 +1,6 @@
 ---
 title: "ReadMe.md"
+Author:"alsjmonsoon"
 date: "August 19, 2015"
 ---
 #Course assignment for Getting and Cleaning Data
@@ -7,8 +8,10 @@ date: "August 19, 2015"
 ####This README.md in the repo describing how the run_anlaysis. R script works. 
 *Please Note:the numbers 1, 2, 3, 4, 5 listed below correspond to the homework assignment numbers from the instructor. Each of the my codes for 'run_analysis.R' is explaned in detail in this document. Also I am using `` as a quatation for my code from run_analysis.R*
 
-
-`library(reshape2,dplyr,plyr)` --> Load the libraries
+Load the relavant libraries
+`library(reshape2)`
+`library(dplyr)`
+`library(plyr)`
 
 *Innital step: downlaod the zipfile and unzip it. Also check the working directory before reading all dataframe (xtrain, ytrain, xtest, ytest, subject_test,subject_train, act_labels and features) into R.* Please note that I didn't need the inertial folders from the origial dataset, therefore no data is read from there.
 
@@ -79,18 +82,19 @@ _please note, I selected all variables 'mean' or 'std' with both upper or lower 
 
 ##4: the homework step 4 is asking to give descriptive names to columns. The following commands is to replace the short names in the orginal column names and make it more understandable. 
 
-namelist1<-colnames(extractedDF)
-namelist1<- gsub("std","sd",namelist1)
-namelist1<-sub("^t","time",namelist1)
-namelist1<-sub(".t",".time",namelist1)
-namelist1 <-gsub("BodyAcc", "BodyAccelerometer", namelist1)
-namelist1 <-gsub("GravityAcc", "GravityAccelerometer", namelist1)
-namelist1 <-gsub("BodyGyro", "BodyGyroscope", namelist1)
-namelist1<-gsub("f","frequency",namelist1)
-namelist1<-gsub("BodyBody","Body",namelist1)
-extractedDF
+`namelist1<-colnames(extractedDF)`
+`namelist1<- gsub("std","sd",namelist1)`
+`namelist1<-sub("^t","time",namelist1)`
+`namelist1<-sub(".t",".time",namelist1)`
+`namelist1 <-gsub("BodyAcc", "BodyAccelerometer", namelist1)`
+`namelist1 <-gsub("GravityAcc", "GravityAccelerometer", namelist1)`
+`namelist1 <-gsub("BodyGyro", "BodyGyroscope", namelist1)`
+`namelist1<-gsub("f","frequency",namelist1)`
+`namelist1<-gsub("BodyBody","Body",namelist1)`
+`colnames(extractedDF)<-namelist1`  --> resign the descriptive names back to extractedDF dataframe
 
-##5:From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+##5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 `tidyDF<-extractedDF%>%
         group_by(subjectID,activity)%>%
@@ -106,11 +110,11 @@ tidyData<-read.table("~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",head=TR
 
 ####"As mentioned in the rubric: either long or wide form is acceptable, see https://class.coursera.org/getdata-031/forum/thread?thread_id=28 for discussion"--David Hood####
 
-##7 read back to R (from the submitted link on coursera)
+##7 read back to R (from the submitted link on coursera)--please copy folloing codes into your R studio
 address <- "https://s3.amazonaws.com/coursera-uploads/user-70283134b2b74179e2bf5cc2/975115/asst-3/f1d5405049ae11e5b6c239d2c1272cc9.txt"
 address <- sub("^https", "http", address)
-data <- read.table(url(address), header = TRUE)
-View(data)
+tidyData <- read.table(url(address), header = TRUE)
+View(tidyData)
  
 
  
