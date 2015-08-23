@@ -24,12 +24,12 @@ Load the relavant libraries
 `ytrain<-read.table("train/y_train.txt",sep="",header=FALSE)`
 `subject_train<-read.table("train/subject_train.txt",sep="",header=FALSE)`
 
-`xtest<-read.table("~/Desktop/UCI HAR Dataset/test/x_test.txt",sep="",header=FALSE)`
-`ytest<-read.table("~/Desktop/UCI HAR Dataset/test/y_test.txt",sep="",header=FALSE)`
-`subject_test<-read.table("~/Desktop/UCI HAR Dataset/test/subject_test.txt",sep="",header=FALSE)`
+`xtest<-read.table("/test/x_test.txt",sep="",header=FALSE)`
+`ytest<-read.table("/test/y_test.txt",sep="",header=FALSE)`
+`subject_test<-read.table("subject_test.txt",sep="",header=FALSE)`
 
-`act_labels<-subject_test<-read.table("~/Desktop/UCI HAR Dataset/activity_labels.txt",sep="",header=FALSE)`
-`features<-read.table("~/Desktop/UCI HAR Dataset/features.txt",sep="",header=FALSE)`
+`act_labels<-subject_test<-read.table("activity_labels.txt",sep="",header=FALSE)`
+`features<-read.table("features.txt",sep="",header=FALSE)`
 
 ## 1.Merges the training and the test data sets to create one data set, note this is not tidy data.
 
