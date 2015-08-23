@@ -103,18 +103,18 @@ _please note, I selected all variables 'mean' or 'std' with both upper or lower 
 
 ##6. save the data as txt file with write.table_
 
-write.table(tidyDF,file="~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",row.names=FALSE)
+`write.table(tidyDF,file="~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",row.names=FALSE)`
 
 _read data back to R_
-tidyData<-read.table("~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",head=TRUE)
+`tidyData<-read.table("~/Desktop/UCI HAR Dataset/final_data/tidyData.txt",head=TRUE)`
 
 ####"As mentioned in the rubric: either long or wide form is acceptable, see https://class.coursera.org/getdata-031/forum/thread?thread_id=28 for discussion"--David Hood####
 
 ##7 read back to R (from the submitted link on coursera)--please copy folloing codes into your R studio
-address <- "https://s3.amazonaws.com/coursera-uploads/user-70283134b2b74179e2bf5cc2/975115/asst-3/f1d5405049ae11e5b6c239d2c1272cc9.txt"
-address <- sub("^https", "http", address)
-tidyData <- read.table(url(address), header = TRUE)
-View(tidyData)
+`address <- "https://s3.amazonaws.com/coursera-uploads/user-70283134b2b74179e2bf5cc2/975115/asst-3/f1d5405049ae11e5b6c239d2c1272cc9.txt"`
+`address <- sub("^https", "http", address)`
+`tidyData <- read.table(url(address), header = TRUE)`
+`View(tidyData)`
  
 
  
