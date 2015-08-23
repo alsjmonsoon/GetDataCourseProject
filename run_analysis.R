@@ -10,16 +10,17 @@ library(plyr)
 fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="~/Desktop/dataset.zip",method="curl")
 unzip("dataset.zip")
-getwd()
-xtrain<-read.table("~/Desktop/UCI HAR Dataset/train/x_train.txt",sep="",header=FALSE)
-ytrain<-read.table("~/Desktop/UCI HAR Dataset/train/y_train.txt",sep="",header=FALSE)
-xtest<-read.table("~/Desktop/UCI HAR Dataset/test/x_test.txt",sep="",header=FALSE)
-ytest<-read.table("~/Desktop/UCI HAR Dataset/test/y_test.txt",sep="",header=FALSE)
+setwd("~/Desktop/UCI HAR Dataset")
+xtrain<-read.table("train/X_train.txt",sep="",header=FALSE)
+ytrain<-read.table("train/y_train.txt",sep="",header=FALSE)
+subject_train<-read.table("train/subject_train.txt",sep="",header=FALSE)
 
-subject_test<-read.table("~/Desktop/UCI HAR Dataset/test/subject_test.txt",sep="",header=FALSE)
-subject_train<-read.table("~/Desktop/UCI HAR Dataset/train/subject_train.txt",sep="",header=FALSE)
-act_labels<-subject_test<-read.table("~/Desktop/UCI HAR Dataset/activity_labels.txt",sep="",header=FALSE)
-features<-read.table("~/Desktop/UCI HAR Dataset/features.txt",sep="",header=FALSE)
+xtest<-read.table("test/X_test.txt",sep="",header=FALSE)
+ytest<-read.table("test/y_test.txt",sep="",header=FALSE)
+subject_test<-read.table("test/subject_test.txt",sep="",header=FALSE)
+
+act_labels<-subject_test<-read.table("activity_labels.txt",sep="",header=FALSE)
+features<-read.table("features.txt",sep="",header=FALSE)
 
 # 1.Merges the training and the test sets to create one data set
 

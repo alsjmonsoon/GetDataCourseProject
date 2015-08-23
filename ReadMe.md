@@ -15,19 +15,19 @@ Load the relavant libraries
 
 *Innital step: downlaod the zipfile and unzip it. Also check the working directory before reading all dataframe (xtrain, ytrain, xtest, ytest, subject_test,subject_train, act_labels and features) into R.* Please note that I didn't need the inertial folders from the origial dataset, therefore no data is read from there.
 
-`getwd()` -->check the working directory
-
 `fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"` -->attach to the url link
 `download.file(fileUrl,destfile="~/Desktop/dataset.zip",method="curl")`-->download the file
-`unzip("dataset.zip")`-->unzip the file
+`unzip("dataset.zip")`-->unzip the file to a folder called `UCI HAR Dataset`
+`setwd(~/Desktop/UCI HAR Dataset)` -->set the working directory
 
-`xtrain<-read.table("~/Desktop/UCI HAR Dataset/train/x_train.txt",sep="",header=FALSE)`
-`ytrain<-read.table("~/Desktop/UCI HAR Dataset/train/y_train.txt",sep="",header=FALSE)`
+`xtrain<-read.table("train/X_train.txt",sep="",header=FALSE)`
+`ytrain<-read.table("train/y_train.txt",sep="",header=FALSE)`
+`subject_train<-read.table("train/subject_train.txt",sep="",header=FALSE)`
+
 `xtest<-read.table("~/Desktop/UCI HAR Dataset/test/x_test.txt",sep="",header=FALSE)`
 `ytest<-read.table("~/Desktop/UCI HAR Dataset/test/y_test.txt",sep="",header=FALSE)`
-
 `subject_test<-read.table("~/Desktop/UCI HAR Dataset/test/subject_test.txt",sep="",header=FALSE)`
-`subject_train<-read.table("~/Desktop/UCI HAR Dataset/train/subject_train.txt",sep="",header=FALSE)`
+
 `act_labels<-subject_test<-read.table("~/Desktop/UCI HAR Dataset/activity_labels.txt",sep="",header=FALSE)`
 `features<-read.table("~/Desktop/UCI HAR Dataset/features.txt",sep="",header=FALSE)`
 
