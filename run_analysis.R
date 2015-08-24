@@ -19,7 +19,7 @@ xtest<-read.table("test/X_test.txt",sep="",header=FALSE)
 ytest<-read.table("test/y_test.txt",sep="",header=FALSE)
 subject_test<-read.table("test/subject_test.txt",sep="",header=FALSE)
 
-act_labels<-subject_test<-read.table("activity_labels.txt",sep="",header=FALSE)
+act_labels<-read.table("activity_labels.txt",sep="",header=FALSE)
 features<-read.table("features.txt",sep="",header=FALSE)
 
 # 1.Merges the training and the test sets to create one data set
